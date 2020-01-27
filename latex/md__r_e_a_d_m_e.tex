@@ -1,0 +1,53 @@
+\# Usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./rpp\_build \# Uses cmake to build the project and execute}
+\DoxyCodeLine{./rpp\_debug \# Builds project with Debug Mode on for use with gdb on the command line}
+\DoxyCodeLine{./rpp\_xcode \# Creates an Xcode project with cmake}
+\end{DoxyCode}
+
+
+\section*{Goals}
+
+Generate map for a circular robot to traverse.
+\begin{DoxyItemize}
+\item Find the optimal path from a given start location to given end location. Approaches
+\item Use B\+FS or Dijkstra\textquotesingle{}s to calculate an optimal path.
+\item Use A$\ast$ to generate the probabilistic model of graphs to traverse through with B\+B8
+\end{DoxyItemize}
+
+\section*{Deliverables}
+
+
+\begin{DoxyItemize}
+\item Create an interface to build up a map for robot.
+\item Place obstacles on the map.
+\item Visualize the map and the optimal path that robot will traverse.
+\item Save and load the map from a file.
+\item Provide example usage of the library.
+\end{DoxyItemize}
+
+\section*{Interface}
+
+\subsection*{Map Class}
+
+This should contain a binary grid of the map with each spot containing distances to the closest obstacle.
+\begin{DoxyItemize}
+\item Takes in initial parameters of map size (M x N) and robot radius.
+\end{DoxyItemize}
+
+Have a function to add obstacles to the map.
+\begin{DoxyItemize}
+\item This should take in as parameter a list of circular obstacles
+\end{DoxyItemize}
+
+Class should create the best safe path given a start and end location on the map.
+\begin{DoxyItemize}
+\item Generate the configuration space within which to plan a path.
+\item Use Dijkstra\textquotesingle{}s algorithm.
+\item Use A$\ast$ algorithm.
+\item Compare the performance of these two approaches.
+\end{DoxyItemize}
+
+\subsection*{\mbox{\hyperlink{struct_obstacle}{Obstacle}} Class}
+
+Holds an obstacle with given center and radius. Simplified to a struct, change to a class if more complexity is needed. 

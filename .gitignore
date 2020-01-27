@@ -1,0 +1,8 @@
+build
+debug
+xcode_build
+Icon?
+CMakeFiles
+CMakeCache.txt
+cmake_install.cmake
+Makefile

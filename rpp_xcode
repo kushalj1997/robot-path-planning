@@ -1,0 +1,6 @@
+echo "Building Xcode Project with CMake..."
+rm -rf xcode_build
+mkdir xcode_build
+cd xcode_build
+cmake -G Xcode ..
+echo "Xcode Project files built, see xcode_build directory"
